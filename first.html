@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <style> 
+
+#rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #FFF0F5;
+    padding: 20px; 
+    width: 500px;
+    height: 80px;
+    
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+</style>
+  </head>
+  <body  background="https://www.solidbackgrounds.com/images/1366x768/1366x768-lavender-blush-solid-color-background.jpg">
+    <div class="s006" align="center">
+	
+	
+	
+      <form method ="POST" id="rcorners2">
+        <fieldset>
+          <legend>What are you looking for?</legend>
+          <div class="inner-form">
+            <div class="input-field">
+  
+              <input id="search" type="text" placeholder="" name="search" value="" size="50"/>
+			  <input type="submit" value="Submit">
+            </div>
+          </div>
+         
+        </fieldset>
+		
+		
+		
+      </form>
+    </div>
+	<br>
+	
+		<table>
+		<th>TITLE</th>
+    <th>PRICE</th>
+	 <th>RATING</th>
+	  <th>SITE</th>
+	  <th>URL</th>
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+
+        {% if result %}
+            {% for key in result %}
+		
+			<tr>
+    
+  </tr>
+		<tr>
+             <td> {{ key[0] }}  </td>
+             <td> {{ key[1] }} </td>
+             <td> {{ key[2] }} </td>
+            <td>  {{ key[4]}}</td>
+             <td> <a href = "{{ key[3] }}" > Click here </a></td>
+		</tr>
+            {% endfor %}
+        {% endif %}
+        
+    </table>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<!––	
+	
+	<p>
+		
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+
+        {% if result %}
+            {% for key in result %}
+			<p></p>
+            TITLE :   {{ key[0] }}  <br>
+            PRICE :    {{ key[1] }} <br>
+            RATING :  {{ key[2] }} <br>
+            Available Site : {{ key[4]}} <br>
+            URL :   <a href = "{{ key[3] }}" > Click here </a><br><br>
+            <p>_______________________________________________________________________________________________________</p>
+            {% endfor %}
+        {% endif %}
+        
+    </p>
+-->
+	
+	
+	
+	
+	
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
